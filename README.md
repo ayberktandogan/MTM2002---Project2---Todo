@@ -23,8 +23,6 @@ npm run server
 - Index
 - Login
 - Register
-
-![Back-end Structure](https://github.com/aybertocarlos/ytu/blob/master/photos/backendstructure.png?raw=true)
  
  **Back-end Structure** // ./
  - Models
