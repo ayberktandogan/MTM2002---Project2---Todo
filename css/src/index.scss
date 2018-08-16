@@ -1,0 +1,77 @@
+$border-color: rgb(136, 50, 218);
+
+.main-container {
+  border-radius: .5rem;
+}
+
+#logout {
+  position: absolute;
+    top: 20px;
+    right: 20px;
+  .btn {
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+.to-do-container {
+  padding: 1rem 0 0 2rem;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 4px rgba(0,0,0,.24);
+  hr {
+    margin-left: -2rem;
+  }
+  .to-do-header {
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+  }
+  .to-do-add {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+  }
+  .md-form {
+    display: inline-block;
+    width: 80%;
+  }
+}
+
+.to-do-list {
+  li {
+    list-style: none;
+    font-weight: 400;
+    padding: 0 calc(1.5rem + 5px) 1rem;
+    background-color: rgb(240, 240, 240);
+    font-family: 'Nunito', sans-serif;
+
+    &:hover {
+      background-color: white;
+    }
+
+    .fa {
+      float: right;
+      color: rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        color: rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+      }
+    }
+
+    &:before {
+      content: ' ';
+      display: block;
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 0 0 1rem;
+      margin: 0 calc(-1.5rem - 5px);
+    }
+  }
+
+  .active {
+    background-color: white;
+    border-left: 5px solid $border-color;
+    padding: 0 calc(1.5rem + 5px) 1rem 1.5rem;
+  }
+}

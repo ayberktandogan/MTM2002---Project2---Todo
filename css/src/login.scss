@@ -1,0 +1,36 @@
+.main-container {
+    padding: 2rem 4rem;
+    .main-header {
+        font-weight: 400;
+        font-size: 2rem;
+        margin: 1rem 0 3rem 0;
+        font-family: 'Nunito', sans-serif;
+    }
+    
+    .alt-header {
+        font-size: 2rem;
+    }
+    
+    .inputs {
+        padding: 2rem 0;
+    }
+    
+    .lgn-btn {
+        font-size: 2rem;
+        font-weight: 400;
+        cursor: pointer;
+        display: inline-block;
+    }
+    
+    .lgn-btn:hover {
+        color: black!important;
+    }
+    
+    .alt-sign-text {
+        padding: .8rem 0;
+
+        a {
+            font-weight: 400;
+        }
+    }
+}
