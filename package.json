@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "server": "concurrently --kill-others-on-fail \"gulp\" \"nodemon server.js\""
   },
   "author": "",
   "license": "ISC",

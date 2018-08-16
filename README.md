@@ -6,11 +6,13 @@ Written using [**NodeJS**](https://nodejs.org/en/), [**ExpressJS**](https://expr
 
 ### Installation
 You have to install some dependencies. Download and install [NodeJS](https://nodejs.org/en/), [MongoDB](https://www.mongodb.com/).
+
 **1:**
 Open command prompt, and run the code below :
 ```javascript
 npm install
-nodemon server.js
+npm install concurrently gulp-cli nodemon --g
+npm run server
 ```
 
 ### Details
