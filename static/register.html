@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#49b9f9">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <header></header>
+    <div class="container center-container">
+        <div class="row justify-content-center">
+            <div class="col-md-5 w-box main-container z-depth-1">
+                <span class="main-header block">ToDO</span>
+                <span class="alt-header block">Hi!</span>
+                <span class="alt-header grey-text block">Sign up to login to ToDO.</span>
+                <form class="inputs" onsubmit="submitHandler()">
+                    <div class="md-form form-group">
+                        <input type="text" id="email" class="form-control">
+                        <label for="email">Email</label>
+                        <small id="email-error"></small>
+                    </div>
+                    <div class="md-form form-group">
+                        <input type="password" id="password" class="form-control">
+                        <label for="password">Password</label>
+                        <small id="password-error"></small>
+                    </div>
+                    <div class="md-form form-group">
+                        <input type="password" id="password2" class="form-control">
+                        <label for="password2">Password Confirm</label>
+                        <small id="password2-error"></small>
+                    </div>
+                    <button class="btn btn-white" type="submit">Sign up</button>
+                </form>    
+                <span class="alt-sign-text grey-text block">Already have an account? <a href="/login.html">Sign in</a></span>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+    <script type="text/javascript" src="./js/main.min.js"></script>
+    <script type="text/javascript" src="./js/register.min.js"></script>
+</body>
+
+</html>
