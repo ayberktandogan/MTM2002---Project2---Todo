@@ -8,7 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 else {
     const instance = axios.create({
-    baseURL: '/api/',
+    baseURL: 'https://todo-ytu.herokuapp.com/api/',
 });
 }
 
