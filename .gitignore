@@ -2,3 +2,4 @@ node_modules/
 .vscode/
 static/**
 package-lock.json
+config/keys_dev.js

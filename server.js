@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const app = express();
 const passport = require('passport')
 const path = require('path')
+const keys = require('./config/keys')
 
 //body-parser
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -15,16 +16,16 @@ const todo = require("./routes/api/todo")
 
 //MongoDB connection.
 mongoose.connect(
-  process.env.MONGO_URI
+  keys.mongoURI
 );
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function() {
+db.once("open", function () {
   console.log("Mongo bağlandı.");
 });
 
 app.use(passport.initialize());
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
   next()
@@ -35,11 +36,12 @@ require('./config/passport')(passport)
 //Route dfn.
 app.use("/api/user", user);
 app.use("/api/todo", todo)
-app.use(express.static("static"));
+app.use(express.static('static/'))
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "static", "index.html"));
-});
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'static', 'index.html'))
+})
+
 
 //App start
 const port = process.env.PORT || 5000;
