@@ -11,46 +11,49 @@ const submitHandler = () => {
   const emailErr = document.getElementById("email-error")
   const passwrdErr = document.getElementById("password-error")
 
+  emailErr.innerHTML = ' '
+  passwrdErr.innerHTML = ' '
+
   const logUserIn = {
     email,
     password
   };
 
   if (Validator.isEmpty(email)) {
-    emailErr.innerHTML = "Email yazmanız gerekiyor";
+    emailErr.innerHTML = "Email yazmanız gerekiyor.";
     isValid = false
   }
 
   if (!Validator.isEmail(email)) {
-    emailErr.innerHTML = "Email geçersiz";
+    emailErr.innerHTML = "Email geçersiz.";
     isValid = false
   }
 
   if (Validator.isEmpty(password)) {
-    passwrdErr.innerHTML = "Şifre girmeniz gerekiyor";
+    passwrdErr.innerHTML = "Şifre girmeniz gerekiyor.";
     isValid = false
   }
 
   if (!Validator.isLength(password, { min: 4, max: 16 })) {
     passwrdErr.innerHTML =
-      "Şifrenizin 4 karakterle 16 karakter arası olması gerekiyor";
-      isValid = false
+      "Şifrenizin 4 karakterle 16 karakter arası olması gerekiyor.";
+    isValid = false
   }
 
-  if(isValid) {
+  if (isValid) {
     axios
-    .post("/user/login", logUserIn)
-    .then(res => {
-      localStorage.setItem('auth', true)
-      localStorage.setItem('token', res.data.token)
-      localStorage.setItem('userId', res.data.id)
+      .post("/user/login", logUserIn)
+      .then(res => {
+        localStorage.setItem('auth', true)
+        localStorage.setItem('token', res.data.token)
+        localStorage.setItem('userId', res.data.id)
         window.location = '/'
-    })
-    .catch(err => {
-      emailErr.innerHTML = 'Email bulunamadı'
-    });
+      })
+      .catch(err => {
+        emailErr.innerHTML = 'Email veya şifre hatalı.'
+      });
   }
-  
+
 };
 
 window.onload = function checkAuth() {
